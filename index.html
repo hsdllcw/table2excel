@@ -7,14 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hello GitHub!</title>
     <script type="text/javascript" src="jquery-1.12.4.js"></script>
-    <script type="text/javascript" src="tableExport.js" charset="utf-8"></script>
     <script type="text/javascript" src="base64.min.js" charset="utf-8"></script>
 </head>
 
 <body>
     <table id="customers">
         <thead>
-            <tr class='warning'>
+            <tr>
                 <th>国家</th>
                 <th>Population</th>
                 <th>Date</th>
@@ -48,12 +47,11 @@
             </tr>
         </tbody>
     </table>
-
+    <button onclick="table2excel(customers)">下载</button>
 </body>
 <script>
-    var el = $('#customers');
-
-    function table2excel(params) {
+    function table2excel(tableName) {
+        var el = $(tableName);
         var excel = "<table>";
         $(el).find('thead').find('tr').each(function() {
             excel += "<tr>";
