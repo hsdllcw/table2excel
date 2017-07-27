@@ -6,872 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hello GitHub!</title>
+    <script type="text/javascript" src="json.js"></script>
     <script type="text/javascript" src="jquery-1.12.4.js"></script>
     <script type="text/javascript" src="base64.min.js" charset="utf-8"></script>
 </head>
 
 <body>
-    <div id="datagrid1" dataField="users" style="display:none">
-
-        <div property="columns">
-            <div type="indexcolumn">
-            </div>
-            <div type="checkcolumn">
-            </div>
-            <div field="id" headerAlign="center" allowSort="true" visible="false">
-                编码
-            </div>
-            <div field="name" headerAlign="center" allowSort="true">
-                姓名
-            </div>
-            <div field="sex" headerAlign="center" allowSort="true">
-                性别
-            </div>
-            <div field="mobile" headerAlign="center" allowSort="true">
-                手机号
-            </div>
-            <div field="school" headerAlign="center" allowSort="true">
-                学校
-            </div>
-            <div field="education" headerAlign="center" allowSort="true">
-                学历
-            </div>
-            <div field="specialty" headerAlign="center" allowSort="true">
-                专业
-            </div>
-            <div field="graduationYear" headerAlign="center" allowSort="true">
-                毕业时间
-            </div>
-            <div field="province" headerAlign="center" allowSort="true">
-                学校所在省
-            </div>
-            <div field="city" headerAlign="center" allowSort="true">
-                学校所在城市
-            </div>
-            <div field="familyAddress" headerAlign="center" allowSort="true">
-                籍贯
-            </div>
-            <div field="lastupdatedTime" dateFormat="yyyy-MM-dd HH:mm:ss" headerAlign="center" allowSort="true">
-                注册时间
-            </div>
-            <div field="idNumber" headerAlign="center" allowSort="true">
-                身份证号
-            </div>
-
-            <div field="desireCity" headerAlign="center" allowSort="true">
-                意愿城市
-            </div>
-            <div field="desireCompany" headerAlign="center" allowSort="true">
-                意愿公司
-            </div>
-            <div field="desirePosition" headerAlign="center" allowSort="true">
-                意愿岗位
-            </div>
-
-            <div field="wxNickName" headerAlign="center" allowSort="true">
-                微信姓名
-            </div>
-
-            <div field="wxId" headerAlign="center" allowSort="true" visible="false">
-                微信号
-            </div>
-
-            <div field="onlineTime" headerAlign="center" allowSort="true">
-                在线时长
-            </div>
-            <div field="postCount" headerAlign="center" allowSort="true">
-                发帖总量
-            </div>
-            <div field="qiandaoCount" headerAlign="center" allowSort="true">
-                签到次数
-            </div>
-            <div field="integral" headerAlign="center" allowSort="true">
-                即时积分
-            </div>
-            <div field="cumIntegral" headerAlign="center" allowSort="true">
-                累计积分
-            </div>
-            <div field="score" headerAlign="center" allowSort="true">
-                测评总分
-            </div>
-        </div>
-    </div>
-    <button onclick="json2table('datagrid1')">下载</button>
+    <button>下载</button>
 </body>
 <script>
-    $(function() {})
+    $(function() {
+        $("button").click(function() {
+            json2excel(json)
 
-    function json2table(params) {
-        var json = {
-            "total": 40,
-            "users": [{
-                "age": null,
-                "birthday": null,
-                "city": "北京",
-                "createBy": null,
-                "createdTime": "2017-01-16 18:48:16.0",
-                "cumIntegral": 1,
-                "describe": null,
-                "desireCity": null,
-                "desireCompany": null,
-                "desirePosition": null,
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFwlYfHQiNnBmxI-09lCAZ9XM",
-                "idNumber": "410323199412123030",
-                "integral": 1,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "18810987046",
-                "name": "冯勇",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": "北京",
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "北京化工大学",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "工学类 机械设计制造及其自动化",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "耳语"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "衡阳",
-                "createBy": null,
-                "createdTime": "2017-01-17 14:32:14.0",
-                "cumIntegral": 1,
-                "describe": null,
-                "desireCity": null,
-                "desireCompany": null,
-                "desirePosition": null,
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFwlWAj9PJpx8EteZyldSNHJg",
-                "idNumber": "211381199309121237",
-                "integral": 1,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "15573408054",
-                "name": "蔡黎明",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": "湖南",
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "南华大学",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "工学类 自动化",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "破晓"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "南京",
-                "createBy": null,
-                "createdTime": "2017-01-17 12:40:30.0",
-                "cumIntegral": 1,
-                "describe": null,
-                "desireCity": null,
-                "desireCompany": null,
-                "desirePosition": null,
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFwlvQjSTJw4VpuJo2sq6UF4s",
-                "idNumber": "360121199508068111",
-                "integral": 1,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "15651017826",
-                "name": "彭晨",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": "江苏",
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "南京航空航天大学",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "工学类 核工程与核技术",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "ヽ(*´з｀*)ﾉ"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "四平",
-                "createBy": null,
-                "createdTime": "2017-01-17 11:54:44.0",
-                "cumIntegral": 6,
-                "describe": null,
-                "desireCity": null,
-                "desireCompany": null,
-                "desirePosition": null,
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFwlvO_K_sktvWDB0HN0oVVw0",
-                "idNumber": "222406199404286628",
-                "integral": 6,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "18843429846",
-                "name": "杨莹",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": "吉林",
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "其他_吉林师范大学博达学院",
-                "score": 0,
-                "sex": "女",
-                "signCompany": null,
-                "specialty": "文学类 其他",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "양영"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "衡阳",
-                "createBy": null,
-                "createdTime": "2017-01-22 05:14:28.0",
-                "cumIntegral": 43,
-                "describe": null,
-                "desireCity": "浙江苍南",
-                "desireCompany": "中广核工程有限公司",
-                "desirePosition": "工程类",
-                "education": "硕士",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFwll2keFW5JlMvubBl5enIqE",
-                "idNumber": "320721198908280235",
-                "integral": 43,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "15211824226",
-                "name": "刘帅",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": "湖南",
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "南华大学",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "工学类 土木工程",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "华山上的熊猫～mis"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "广州",
-                "createBy": null,
-                "createdTime": "2017-01-18 11:37:07.0",
-                "cumIntegral": 0,
-                "describe": null,
-                "desireCity": null,
-                "desireCompany": null,
-                "desirePosition": null,
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFwl2aGeKIa7ZrlV0SrAg7gaQ",
-                "idNumber": "440682199401093210",
-                "integral": 0,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "18819466053",
-                "name": "崔文辉",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": "广东",
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "广东工业大学",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "工学类 金属材料工程",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "NEAR"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "武汉",
-                "createBy": null,
-                "createdTime": "2017-01-13 18:42:57.0",
-                "cumIntegral": 29,
-                "describe": null,
-                "desireCity": "山西",
-                "desireCompany": "中广核新能源河北山西分公司",
-                "desirePosition": "维修类",
-                "education": "大专",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFwkprEX9a-wofRDIoDjdBs20",
-                "idNumber": "140429199503080433",
-                "integral": 29,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "13363450420",
-                "name": "张成杰",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": "湖北",
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "武汉电力职业技术学院",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "电力技术类 发电厂及电力系统",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "小飞侠"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "南宁",
-                "createBy": null,
-                "createdTime": "2017-01-16 18:06:43.0",
-                "cumIntegral": 1,
-                "describe": null,
-                "desireCity": null,
-                "desireCompany": null,
-                "desirePosition": null,
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFwjVscPpLDA51RGHrx69_IJc",
-                "idNumber": "372925199304175719",
-                "integral": 1,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "15578033044",
-                "name": "张传峰",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": "广西",
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "广西大学",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "工学类 自动化",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "来块儿糖。"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "吉林",
-                "createBy": null,
-                "createdTime": "2017-01-17 10:17:12.0",
-                "cumIntegral": 14,
-                "describe": null,
-                "desireCity": null,
-                "desireCompany": null,
-                "desirePosition": null,
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2018",
-                "id": "ojayFwjpykTUxXleM46nnVMJ9ro4",
-                "idNumber": "342222199508053657",
-                "integral": 14,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "15944282122",
-                "name": "张翔",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": "吉林",
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "东北电力大学",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "工学类 核工程与核技术",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "小封"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "郑州",
-                "createBy": null,
-                "createdTime": "2017-01-17 11:20:45.0",
-                "cumIntegral": 1,
-                "describe": null,
-                "desireCity": null,
-                "desireCompany": null,
-                "desirePosition": null,
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFwv_02M6caXpbfPHd0f_U6HQ",
-                "idNumber": "410184199303059035",
-                "integral": 1,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "13007509117",
-                "name": "罗琦",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": null,
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "其他_郑州轻工业大学",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "工学类 电气工程及其自动化",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "҉留白๑৺"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "长春",
-                "createBy": null,
-                "createdTime": "2017-01-14 21:45:43.0",
-                "cumIntegral": 0,
-                "describe": null,
-                "desireCity": "广东深圳（含大亚湾）",
-                "desireCompany": "中国广核电力股份有限公司",
-                "desirePosition": "工程建设",
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFwvpn-_BS6dElw5n2DvyptvE",
-                "idNumber": "142201199504160747",
-                "integral": 0,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "15590590318",
-                "name": "庞渊",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": null,
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "长春工业大学",
-                "score": 0,
-                "sex": "女",
-                "signCompany": null,
-                "specialty": "工学类 电气工程及其自动化",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "庞渊"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "郑州",
-                "createBy": null,
-                "createdTime": "2017-01-17 19:25:02.0",
-                "cumIntegral": 0,
-                "describe": null,
-                "desireCity": null,
-                "desireCompany": null,
-                "desirePosition": null,
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFwjizPb2VXYJ-twrIsoIL_48",
-                "idNumber": "410728199403064511",
-                "integral": 0,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "13071039815",
-                "name": "刘帅伟",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": "河南",
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "其他_郑州轻工业学院",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "工学类 电气工程及其自动化",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "帅"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "广州",
-                "createBy": null,
-                "createdTime": "2017-02-05 09:45:45.0",
-                "cumIntegral": 21,
-                "describe": null,
-                "desireCity": null,
-                "desireCompany": null,
-                "desirePosition": null,
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2018",
-                "id": "ojayFwu-F1ylKw6RfU-gsF4NSKdg",
-                "idNumber": "441424199404160374",
-                "integral": 21,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "15521303278",
-                "name": "薛更昌",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": null,
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "广东工业大学",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "工学类 自动化",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "Hungry"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "重庆",
-                "createBy": null,
-                "createdTime": "2017-01-16 19:53:43.0",
-                "cumIntegral": 641,
-                "describe": "adasdsafs",
-                "desireCity": "北京",
-                "desireCompany": "北京公司",
-                "desirePosition": "北京类",
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFwgkUvi0f86uM6b50YinkvoA",
-                "idNumber": "130929199512270322",
-                "integral": 131,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "15223358355",
-                "name": "刘红洁",
-                "onlineTime": "18时59分55秒",
-                "postCount": 1,
-                "province": "重庆",
-                "qiandaoCount": 5,
-                "region": null,
-                "repliesCount": 9,
-                "school": "重庆大学",
-                "score": 49,
-                "sex": "女",
-                "signCompany": null,
-                "specialty": "管理学 工程管理",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "北笙"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "吉林",
-                "createBy": null,
-                "createdTime": "2017-01-18 11:21:19.0",
-                "cumIntegral": 43,
-                "describe": null,
-                "desireCity": "广东深圳（含大亚湾）",
-                "desireCompany": "深圳中广核工程设计有限公司",
-                "desirePosition": "技术支持类",
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2018",
-                "id": "ojayFwtfDNrC-8bcawHN2wGm3Fj4",
-                "idNumber": "220802199606101542",
-                "integral": 43,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "15943293361",
-                "name": "许笛",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": null,
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "东北电力大学",
-                "score": 0,
-                "sex": "女",
-                "signCompany": null,
-                "specialty": "工学类 自动化",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "细雨湿流光"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "沈阳",
-                "createBy": null,
-                "createdTime": "2017-02-01 21:24:05.0",
-                "cumIntegral": 21,
-                "describe": null,
-                "desireCity": null,
-                "desireCompany": null,
-                "desirePosition": null,
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2018",
-                "id": "ojayFwsvFn-QT8Fo5V7MPXERAwbM",
-                "idNumber": "210602199507040016",
-                "integral": 21,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "15734030244",
-                "name": "丁介夫",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": null,
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "沈阳工业大学",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "工学类 自动化",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "心之所向便是光丶"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "成都",
-                "createBy": null,
-                "createdTime": "2017-01-17 20:30:15.0",
-                "cumIntegral": 1,
-                "describe": null,
-                "desireCity": null,
-                "desireCompany": null,
-                "desirePosition": null,
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFwsLrUu3686TwZBKQHByRYUw",
-                "idNumber": "513822199410186174",
-                "integral": 1,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "18628948175",
-                "name": "王锟",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": null,
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "成都理工大学",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "工学类 核工程与核技术",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "王锟"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "哈尔滨",
-                "createBy": null,
-                "createdTime": "2017-01-17 11:42:12.0",
-                "cumIntegral": 0,
-                "describe": null,
-                "desireCity": null,
-                "desireCompany": null,
-                "desirePosition": null,
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFws99dtY9ZameH4ursIBzukw",
-                "idNumber": "230128199310221235",
-                "integral": 0,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "15754602187",
-                "name": "姚鹏飞",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": null,
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "哈尔滨工业大学",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "工学类 能源与动力工程（热能与动力工程）",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "姚**"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "成都",
-                "createBy": null,
-                "createdTime": "2017-01-16 18:51:13.0",
-                "cumIntegral": 11,
-                "describe": null,
-                "desireCity": null,
-                "desireCompany": null,
-                "desirePosition": null,
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFws8f3LIyLVwJERqO4l8zAAg",
-                "idNumber": "510723199501223274",
-                "integral": 11,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "15681923186",
-                "name": "杨劼",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": null,
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "四川大学",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "工学类 核工程与核技术",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "苦瓜"
-            }, {
-                "age": null,
-                "birthday": null,
-                "city": "哈尔滨",
-                "createBy": null,
-                "createdTime": "2017-01-17 11:38:02.0",
-                "cumIntegral": 1,
-                "describe": null,
-                "desireCity": null,
-                "desireCompany": null,
-                "desirePosition": null,
-                "education": "本科",
-                "familyAddress": "黑龙江",
-                "graduationYear": "2017",
-                "id": "ojayFwrvkXNYIZHutPK2xQN7762c",
-                "idNumber": "211221199508162451",
-                "integral": 1,
-                "isGood": "否",
-                "lastupdatedBy": null,
-                "lastupdatedTime": "2017-02-22 10:14:00.0",
-                "mobile": "13039971760",
-                "name": "赵跃",
-                "onlineTime": "0秒",
-                "postCount": null,
-                "province": null,
-                "qiandaoCount": null,
-                "region": null,
-                "repliesCount": null,
-                "school": "哈尔滨工程大学",
-                "score": 0,
-                "sex": "男",
-                "signCompany": null,
-                "specialty": "工学类 能源与动力工程（热能与动力工程）",
-                "status": null,
-                "tel": null,
-                "type": "学员",
-                "wxNickName": "justoso"
-            }]
-        }
+        })
+    })
+
+    function json2excel(json) {
         var cols = new Array();
-        var divs = $(document.getElementById(params)).find("div");
+        var userCol = json.userCol;
         var j = 0;
-        for (var i = 0; i < divs.length; i++) {
-            if (typeof(field) != "undefined") {
-                cols[j] = {
-                    "field": $(divs[i]).attr("field"),
-                    "name": $(divs[i]).text()
-                };
-                j++;
-            }
+        for (var key in userCol) {
+            cols[j] = {
+                "field": key,
+                "name": userCol[key]
+            };
+            j++;
         }
-        var tempTable = "<table id='tempTable' style='display:none'>" +
+        var tempTable = "<table id='tempTable'>" +
             "<thead><tr>";
         for (var i = 0; i < cols.length; i++) {
-            tempTable += "<th >" + cols[i].name + "</th>"
+            tempTable += "<th>" + cols[i].name + "</th>"
         }
-        tempTable += "</tr></thead>" +
-            "</table>";
+        tempTable += "</tr></thead><tbody>";
+
+        for (var j = 0; j < json.users.length; j++) {
+            var data = json.users[j];
+            tempTable += "<tr>";
+            for (var i = 0; i < cols.length; i++) {
+                var field = cols[i].field;
+                if (data[field]) tempTable += "<td >" + data[field] + "</td>";
+                else tempTable += "<td>&nbsp;　</td>";
+            }
+            tempTable += "</tr>";
+        }
+        tempTable += "</tbody></table>";
         $("body").append(tempTable);
         $("#tempTable").show()
-        table2excel("tempTable")
+        table2excel(json.sheet + '.xls', "tempTable")
         $("#tempTable").remove()
     }
 
-    function table2excel(tableName) {
+    function table2excel(filename, tableName) {
         var el = $(document.getElementById(tableName));
         var excel = "<table>";
         $(el).find('thead').find('tr').each(function() {
@@ -889,7 +75,7 @@
             var colCount = 0;
             $(this).filter(':visible').find('td').each(function(index, data) {
                 if ($(this).css('display') != 'none') {
-                    excel += "<td>" + $(this).text() + "</td>";
+                    excel += "<td x:str>" + $(this).text() + "</td>";
                 }
                 colCount++;
             });
@@ -905,7 +91,7 @@
         excelFile += "<x:ExcelWorksheets>";
         excelFile += "<x:ExcelWorksheet>";
         excelFile += "<x:Name>";
-        excelFile += "{worksheet}";
+        excelFile += filename;
         excelFile += "</x:Name>";
         excelFile += "<x:WorksheetOptions>";
         excelFile += "<x:DisplayGridlines/>";
@@ -920,7 +106,61 @@
         excelFile += excel;
         excelFile += "</body>";
         excelFile += "</html>";
-        window.open('data:application/vnd.ms-excel;filename=exportData.doc;base64,' + Base64.encode(excelFile));
+        var base64url = 'data:application/vnd.ms-excel;filename=' + filename + ';base64,' + Base64.encode(excelFile);
+
+        if (navigator.userAgent.indexOf("Trident") > -1) { //IE  //|| myBrowser() === "Edge"
+            //支持IE11
+            window.navigator.msSaveBlob(convertBase64UrlToBlob(base64url), filename);
+        } else { //!IE 
+            $("body").append("<a id='tempa' download='" + filename + "'>temp</a>")
+            var blob = convertBase64UrlToBlob(base64url, 'application/vnd.ms-excel');
+            url = window.URL.createObjectURL(blob);
+            $("#tempa").attr("href", url)
+            $("#tempa")[0].click();
+            $("#tempa").remove();
+        }
+    }
+
+    function convertBase64UrlToBlob(urlData, type) {
+
+        var bytes = window.atob(urlData.split(',')[1]); //去掉url的头，并转换为byte
+
+        //处理异常,将ascii码小于0的转换为大于0
+        var ab = new ArrayBuffer(bytes.length);
+        var ia = new Uint8Array(ab);
+        for (var i = 0; i < bytes.length; i++) {
+            ia[i] = bytes.charCodeAt(i);
+        }
+
+        return new Blob([ab], {
+            type: type
+        });
+    }
+    //判断浏览器类型
+    function myBrowser() {
+        var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+        var isOpera = userAgent.indexOf("OPR") > -1;
+        if (isOpera) {
+            return "Opera"
+        }; //判断是否Opera浏览器 OPR/43.0.2442.991
+
+        //if (userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera) { return "IE"; }; //判断是否IE浏览器 
+
+        if (userAgent.indexOf("Firefox") > -1) {
+            return "FF";
+        } //判断是否Firefox浏览器  Firefox/51.0
+        if (userAgent.indexOf("Trident") > -1) {
+            return "IE";
+        } //判断是否IE浏览器  Trident/7.0; rv:11.0
+        if (userAgent.indexOf("Edge") > -1) {
+            return "Edge";
+        } //判断是否Edge浏览器  Edge/14.14393
+        if (userAgent.indexOf("Chrome") > -1) {
+            return "Chrome";
+        } // Chrome/56.0.2924.87
+        if (userAgent.indexOf("Safari") > -1) {
+            return "Safari";
+        } //判断是否Safari浏览器 AppleWebKit/534.57.2 Version/5.1.7 Safari/534.57.2
     }
 </script>
 
